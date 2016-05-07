@@ -23,7 +23,7 @@
     </repository>
     <repository>
       <id>NPCore-repo</id>
-      <url>https://raw.github.com/MasahiroSaito/NPCore/mvn-repo/</url>
+      <url>https://github.com/MasahiroSaito/NPCore/tree/mvn-repo</url>
     </repository>
   </repositories>
 
