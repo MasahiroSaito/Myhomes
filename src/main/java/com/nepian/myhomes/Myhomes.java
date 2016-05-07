@@ -12,8 +12,8 @@ import com.nepian.npcore.util.ListenerUtil;
 import com.nepian.npcore.util.Messenger;
 import com.nepian.npcore.util.sqlite.SQLite;
 
-public class Main extends JavaPlugin {
-	private static Main plugin;
+public class Myhomes extends JavaPlugin {
+	private static Myhomes plugin;
 	private NPCore npcore;
 	private Messenger messenger;
 	private SQLite sqlite;
@@ -23,7 +23,7 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		checkNPCore();
 		plugin = this;
-		messenger = new Messenger(plugin, false);
+		messenger = new Messenger(plugin, true);
 		sqlite = npcore.getSQLite();
 		homedataController = new HomedataController(plugin, sqlite);
 		
@@ -31,7 +31,7 @@ public class Main extends JavaPlugin {
 		ListenerUtil.register(plugin, new PlayerRespawnListener(plugin));
 	}
 	
-	public static Main getPlugin() {
+	public static Myhomes getPlugin() {
 		return plugin;
 	}
 	

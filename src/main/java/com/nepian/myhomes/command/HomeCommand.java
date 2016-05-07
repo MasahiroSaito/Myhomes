@@ -6,7 +6,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.nepian.myhomes.HomedataController;
-import com.nepian.myhomes.Main;
+import com.nepian.myhomes.Myhomes;
 import com.nepian.myhomes.Properties;
 import com.nepian.myhomes.command.sub.HelpCommand;
 import com.nepian.myhomes.command.sub.ListCommand;
@@ -17,9 +17,9 @@ import com.nepian.npcore.util.command.MainCommand;
 import com.nepian.npcore.util.command.SubCommandType;
 
 public class HomeCommand extends MainCommand {
-	private Main plugin;
+	private Myhomes plugin;
 	
-	public HomeCommand(Main plugin) {
+	public HomeCommand(Myhomes plugin) {
 		super(plugin.getMessenger(), "home");
 		super.addCommandSenderType(CommandSenderType.PLAYER);
 		this.plugin = plugin;

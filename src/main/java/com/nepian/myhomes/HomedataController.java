@@ -35,9 +35,9 @@ public class HomedataController {
  	private String REMOVE_HOME = "delete from " + TABLE + WHERE_UUID_NAME;
 	
 	private SQLite sqlite;
-	private Main plugin;
+	private Myhomes plugin;
 
-	public HomedataController(Main plugin, SQLite sqlite) {
+	public HomedataController(Myhomes plugin, SQLite sqlite) {
 		this.sqlite = sqlite;
 		this.plugin = plugin;
 		createTable();

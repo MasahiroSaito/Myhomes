@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.nepian.myhomes.HomedataController;
-import com.nepian.myhomes.Main;
+import com.nepian.myhomes.Myhomes;
 import com.nepian.myhomes.Properties;
 import com.nepian.npcore.util.Messenger;
 import com.nepian.npcore.util.command.CommandSenderType;
@@ -15,9 +15,9 @@ import com.nepian.npcore.util.command.SubCommand;
 import com.nepian.npcore.util.command.SubCommandType;
 
 public class RemoveCommand extends SubCommand {
-	private Main plugin;
+	private Myhomes plugin;
 	
-	public RemoveCommand(Main plugin) {
+	public RemoveCommand(Myhomes plugin) {
 		super("remove");
 		super.addCommandSenderType(CommandSenderType.PLAYER);
 		this.plugin = plugin;

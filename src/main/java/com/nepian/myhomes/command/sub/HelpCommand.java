@@ -3,16 +3,16 @@ package com.nepian.myhomes.command.sub;
 import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandSender;
 
-import com.nepian.myhomes.Main;
+import com.nepian.myhomes.Myhomes;
 import com.nepian.npcore.util.command.MainCommand;
 import com.nepian.npcore.util.command.SubCommand;
 import com.nepian.npcore.util.command.SubCommandType;
 
 public class HelpCommand extends SubCommand {
 	private MainCommand main;
-	private Main plugin;
+	private Myhomes plugin;
 	
-	public HelpCommand(Main plugin, MainCommand main) {
+	public HelpCommand(Myhomes plugin, MainCommand main) {
 		super("help");
 		this.main = main;
 		this.plugin = plugin;

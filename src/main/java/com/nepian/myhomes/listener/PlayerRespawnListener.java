@@ -7,13 +7,13 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerRespawnEvent;
 
 import com.nepian.myhomes.HomedataController;
-import com.nepian.myhomes.Main;
+import com.nepian.myhomes.Myhomes;
 import com.nepian.myhomes.Properties;
 
 public class PlayerRespawnListener implements Listener {
-	private static Main plugin;
+	private static Myhomes plugin;
 	
-	public PlayerRespawnListener(Main plugin) {
+	public PlayerRespawnListener(Myhomes plugin) {
 		PlayerRespawnListener.plugin = plugin;
 	}
 
