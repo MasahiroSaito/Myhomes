@@ -1,0 +1,9 @@
+name: Myhomes
+main: com.nepian.myhomes.Main
+version: 0.0.1
+author: Nepian
+load: POSTWORLD
+softdepend: [ NPCore ]
+commands:
+  home:
+    usage: /<command> (<homeName>)
