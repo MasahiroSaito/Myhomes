@@ -1,6 +1,6 @@
 name: Myhomes
 main: com.nepian.myhomes.Main
-version: 0.0.1
+version: 0.1.2
 author: Nepian
 load: POSTWORLD
 softdepend: [ NPCore ]
