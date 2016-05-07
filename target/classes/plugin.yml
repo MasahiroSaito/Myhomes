@@ -1,5 +1,5 @@
 name: Myhomes
-main: com.nepian.myhomes.Main
+main: com.nepian.myhomes.Myhomes
 version: 0.1.2
 author: Nepian
 load: POSTWORLD
