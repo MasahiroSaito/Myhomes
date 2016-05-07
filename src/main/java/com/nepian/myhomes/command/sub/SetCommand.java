@@ -11,13 +11,15 @@ import com.nepian.myhomes.Myhomes;
 import com.nepian.myhomes.Properties;
 import com.nepian.npcore.util.Messenger;
 import com.nepian.npcore.util.command.CommandSenderType;
+import com.nepian.npcore.util.command.MainCommand;
 import com.nepian.npcore.util.command.SubCommand;
 import com.nepian.npcore.util.command.SubCommandType;
 
 public class SetCommand extends SubCommand {
 	private Myhomes plugin;
+	private MainCommand main;
 	
-	public SetCommand(Main plugin) {
+	public SetCommand(Myhomes plugin, MainCommand main) {
 		super("set");
 		super.addCommandSenderType(CommandSenderType.PLAYER);
 		this.plugin = plugin;
@@ -31,6 +33,13 @@ public class SetCommand extends SubCommand {
 		Messenger mes = plugin.getMessenger();
 		HomedataController hc = plugin.getHomedataController();
 		String name = (args.length == 0) ? Properties.DEFAULT_HOME_NAME : args[0];
+		
+		for (SubCommand sub : main.getSubCommands()) {
+			if (sub.getName().equals(name)) {
+				mes.sendFailed(sender, "ホーム名(&6" + name + "&r)は使用できません");
+				return;
+			}
+		}
 		
 		if (hc.has(player, name)) {
 			try {

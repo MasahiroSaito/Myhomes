@@ -23,7 +23,7 @@ public class HomeCommand extends MainCommand {
 		super(plugin.getMessenger(), "home");
 		super.addCommandSenderType(CommandSenderType.PLAYER);
 		this.plugin = plugin;
-		this.registerSubCommand(new SetCommand(plugin));
+		this.registerSubCommand(new SetCommand(plugin, this));
 		this.registerSubCommand(new RemoveCommand(plugin));
 		this.registerSubCommand(new ListCommand(plugin));
 		this.registerSubCommand(new HelpCommand(plugin, this));
