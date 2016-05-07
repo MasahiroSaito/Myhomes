@@ -3,11 +3,12 @@
   <groupId>com.Nepian.Myhomes</groupId>
   <artifactId>Myhomes</artifactId>
   <versioning>
-    <release>0.1.2</release>
+    <release>0.2.3</release>
     <versions>
       <version>0.0.1</version>
       <version>0.1.2</version>
+      <version>0.2.3</version>
     </versions>
-    <lastUpdated>20160507132443</lastUpdated>
+    <lastUpdated>20160507153838</lastUpdated>
   </versioning>
 </metadata>

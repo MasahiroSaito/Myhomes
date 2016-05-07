@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.Nepian.Myhomes</groupId>
   <artifactId>Myhomes</artifactId>
-  <version>0.1.2</version>
+  <version>0.2.3</version>
   
   <properties>
     <github.global.server>github</github.global.server>
