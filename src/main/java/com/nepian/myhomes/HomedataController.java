@@ -32,6 +32,7 @@ public class HomedataController {
  	private String GET_HOME = "select " + LOCATION + " from " + TABLE + WHERE_UUID_NAME;
  	private String GET_HOMES = "select " + NAME + ", " + LOCATION + " from " + TABLE + " where " + UUID + "=?";
  	private String GET_HOME_NAMES = "select " + NAME + " from " + TABLE + " where " + UUID + "=?";
+ 	private String GET_HOMEDATAS = "select distinct " + UUID + " from " + TABLE;
  	private String REMOVE_HOME = "delete from " + TABLE + WHERE_UUID_NAME;
 	
 	private SQLite sqlite;
@@ -198,6 +199,34 @@ public class HomedataController {
 	
 	public void removeHome(OfflinePlayer player, String name) throws SQLException {
 		removeHome(player.getUniqueId(), name);
+	}
+	
+	/**
+	 * 全てのホームデータを取得する
+	 * @return ひとつのUUIDに対して、ホーム名とホームの場所をMapにしたMapを返す
+	 */
+	public Map<java.util.UUID, Map<String, Location>> getHomedatas() {
+		Map<UUID, Map<String, Location>> homedatas = Util.newMap();
+		
+		try {
+			PreparedStatement ps = sqlite.getPreparedStatement(GET_HOMEDATAS);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				UUID uuid = java.util.UUID.fromString(rs.getString(1));
+				Map<String, Location> homes = Util.newMap();
+				
+				for (String name : getHomeNames(uuid)) {
+					homes.put(name, this.getHome(uuid, name));
+				}
+				
+				homedatas.put(uuid, homes);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return homedatas;
 	}
 	
 	/* Private Method ------------------------------------------------------ */
